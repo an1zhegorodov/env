@@ -38,7 +38,7 @@ filetype plugin indent on     " required!
 " NOTE: comments after Bundle command are not allowed..
 set t_Co=256
 set expandtab
-set tabstop=4
+set smartindent
 set shiftwidth=4
 set softtabstop=4
 set backspace=indent,eol,start
