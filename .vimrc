@@ -37,11 +37,14 @@ filetype plugin indent on     " required!
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed..
 set t_Co=256
-set expandtab
-set smartindent
-set shiftwidth=4
 set softtabstop=4
-set backspace=indent,eol,start
-set binary
+set shiftwidth=4
+set expandtab
+set autoindent
+set number
 set ruler
 colorscheme wombat256mod
+
+" To remove newline symbol at the end of php files (damn ?>)
+au BufWritePre *.php :set binary | set noeol
+au BufWritePost *.php :set nobinary | set eol
