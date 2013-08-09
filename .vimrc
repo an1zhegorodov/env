@@ -48,5 +48,5 @@ set ruler
 colorscheme wombat256mod
 
 " To remove newline symbol at the end of php files (damn ?>)
-" au BufWritePre *.php :set binary | set noeol
-" au BufWritePost *.php :set nobinary | set eol
+au BufWritePre *.php :set binary | set noeol
+au BufWritePost *.php :set nobinary | set eol
