@@ -13,6 +13,8 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'shawncplus/php.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'vim-scripts/simple-pairs'
 "Bundle 'tpope/vim-fugitive'
 "Bundle 'Lokaltog/vim-easymotion'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -46,5 +48,5 @@ set ruler
 colorscheme wombat256mod
 
 " To remove newline symbol at the end of php files (damn ?>)
-au BufWritePre *.php :set binary | set noeol
-au BufWritePost *.php :set nobinary | set eol
+" au BufWritePre *.php :set binary | set noeol
+" au BufWritePost *.php :set nobinary | set eol
