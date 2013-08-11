@@ -15,6 +15,7 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'shawncplus/php.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-scripts/simple-pairs'
+Bundle 'ludovicPelle/vim-xdebug'
 "Bundle 'tpope/vim-fugitive'
 "Bundle 'Lokaltog/vim-easymotion'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -47,9 +48,16 @@ set number
 set ruler
 colorscheme wombat256mod
 
+" Switch to normal mode when in insert mode
 :imap jj <Esc>
+
+" Switch between tabs with Ctrl-h/l
 :map <C-h> :tabp<Enter>
 :map <C-l> :tabn<Enter>
-" To remove newline symbol at the end of php files (damn ?>)
+
+" ; Adds a semicolon to the end of the line when in normal mode
+noremap ; :s/\([^;]\)$/\1;/<cr>:nohls<cr>
+
+" Remove newline symbol at the end of php files (damn ?>)
 au BufWritePre *.php :set binary | set noeol
 au BufWritePost *.php :set nobinary | set eol
