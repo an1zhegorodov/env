@@ -11,23 +11,11 @@ Bundle 'gmarik/vundle'
 "
 " original repos on github
 Bundle 'scrooloose/nerdtree'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'shawncplus/php.vim'
-Bundle 'kien/ctrlp.vim'
+Bundle 'StanAngeloff/php.vim'
+Bundle 'othree/html5.vim'
 Bundle 'vim-scripts/simple-pairs'
-Bundle 'ludovicPelle/vim-xdebug'
-"Bundle 'tpope/vim-fugitive'
-"Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-"Bundle 'tpope/vim-rails.git'
-" vim-scripts repos
-"Bundle 'L9'
-"Bundle 'FuzzyFinder'
-" non github repos
-"Bundle 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (ie. when working on your own plugin)
-"Bundle 'file:///Users/gmarik/path/to/plugin'
-" ...
+Bundle 'an1zhegorodov/vim-colorschemes'
+"Bundle 'ludovicPelle/vim-xdebug'
 
 filetype plugin indent on     " required!
 "
@@ -42,11 +30,12 @@ filetype plugin indent on     " required!
 set t_Co=256
 set softtabstop=4
 set shiftwidth=4
+set ff=unix
 set expandtab
 set autoindent
 set number
 set ruler
-colorscheme wombat256mod
+colorscheme github
 
 " Switch to normal mode when in insert mode
 :imap jj <Esc>
@@ -61,3 +50,17 @@ noremap ; :s/\([^;]\)$/\1;/<cr>:nohls<cr>
 " Remove newline symbol at the end of php files (damn ?>)
 au BufWritePre *.php :set binary | set noeol
 au BufWritePost *.php :set nobinary | set eol
+
+" Setting gui font
+if has('gui_running')
+  set guifont=Liberation\ Mono\ 9,3
+endif
+
+" Show syntax highlighting groups for word under cursor
+nmap <C-S-P> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+    if !exists("*synstack")
+        return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
