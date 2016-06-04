@@ -1,4 +1,4 @@
-vimrc
+Environment scripts/configs
 =====
-
-My .vimrc file
+* .vimrc - vim configuration
+* setup_web.sh - setup directory structure and permissions for web server
