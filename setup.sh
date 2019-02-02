@@ -3,7 +3,9 @@
 sudo apt-get update
 sudo apt-get install -y git vim zsh wget ncdu htop
 chsh -s /bin/zsh
-git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+if [ ! -d ~/.oh-my-zsh ]; then
+    git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+fi
 mv gitconfig ~/.gitconfig
 mv zshrc ~/.zshrc
 mv vimrc ~/.vimrc
