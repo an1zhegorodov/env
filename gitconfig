@@ -1,0 +1,5 @@
+[user]
+	name = Anton Nizhegorodov
+[core]
+	editor = vim
+	pager = cat
