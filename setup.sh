@@ -45,3 +45,4 @@ sudo setfacl -dm u:$USER:rwx $VHOSTS_DIR
 sudo setfacl -dm g:$SERVER_GROUP:rwx $VHOSTS_DIR
 sudo setfacl -m u:$USER:rwx $VHOSTS_DIR
 sudo setfacl -m g:$SERVER_GROUP:rwx $VHOSTS_DIR
+echo 'Logout and log back in to make zsh your default shell'
