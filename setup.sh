@@ -9,6 +9,15 @@ if [ ! -d ~/.oh-my-zsh ]; then
 else
     echo 'oh-my-zsh is already installed'
 fi
+if [ ! -d ~/apps/phpstorm ]; then
+    echo 'Installing phpstorm...'
+    mkdir -p ~/apps/phpstorm
+    wget https://download.jetbrains.com/webide/PhpStorm-2018.3.3.tar.gz -O ~/apps/phpstorm/phpstorm.tar.gz
+    tar -zxvf ~/apps/phpstorm/phpstorm.tar.gz -C ~/apps/phpstorm --strip-components=1
+    rm ~/apps/phpstorm/phpstorm.tar.gz
+else
+    echo 'PhpStorm is already installed'
+fi
 echo 'Overriding .gitconfig...'
 cp gitconfig ~/.gitconfig
 echo 'Overriding .zshrc...'
