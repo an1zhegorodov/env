@@ -10,11 +10,11 @@ else
     echo 'oh-my-zsh is already installed'
 fi
 echo 'Overriding .gitconfig...'
-mv gitconfig ~/.gitconfig
+cp gitconfig ~/.gitconfig
 echo 'Overriding .zshrc...'
-mv zshrc ~/.zshrc
+cp zshrc ~/.zshrc
 echo 'Overriding .vimrc...'
-mv vimrc ~/.vimrc
+cp vimrc ~/.vimrc
 echo 'Setting up /var/vhosts folder...'
 VHOSTS_DIR="/var/vhosts"
 SERVER_GROUP="www-data"
