@@ -8,7 +8,6 @@
 ## TODO
 
 * Make it fully idempotent (do not override configs?)
-* Install phpstorm
 * Install nginx and configure
 * Install apache and configure
 * Ask for input? (e.g. git email)
