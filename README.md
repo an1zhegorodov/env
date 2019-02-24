@@ -17,7 +17,6 @@ Run dev version `wget https://github.com/mintobit/env/archive/develop.zip && unz
 ## TODO
 
 * Make it fully idempotent (do not override configs?)
-* Install composer
 * Install nginx and configure
 * Install apache and configure
 * Ask for input? (e.g. git email)
