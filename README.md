@@ -1,4 +1,13 @@
-### Environment scripts/configs
+# Env
+This package installs everything I typically need on a clean system
+
+## Usage
+
+Run `wget https://github.com/mintobit/env/archive/master.zip && unzip master.zip && cd env-master && ./setup.sh` 
+
+Run dev version `wget https://github.com/mintobit/env/archive/develop.zip && unzip develop.zip && cd env-develop && ./setup.sh`
+
+## Environment scripts/configs
 
 * vimrc - vim configuration
 * zshrc - zsh shell configuration
