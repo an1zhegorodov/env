@@ -1,7 +1,7 @@
 #!/bin/sh
 
 sudo apt-get update
-sudo apt-get install -y git vim zsh wget ncdu htop php
+sudo apt-get install -qq git vim zsh wget ncdu htop php
 chsh -s $(grep /zsh$ /etc/shells | tail -1)
 if [ ! -d ~/.oh-my-zsh ]; then
     echo 'Setting up oh-my-zsh...'
