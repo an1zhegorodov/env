@@ -2,6 +2,11 @@
 
 sudo apt-get update
 sudo apt-get install -qq git vim zsh wget ncdu htop php
+
+if [ ! -f ~/.ssh/id_rsa.pub ]; then
+    ssh-keygen -f ~/.ssh/id_rsa -N ''
+fi
+
 chsh -s $(grep /zsh$ /etc/shells | tail -1)
 if [ ! -d ~/.oh-my-zsh ]; then
     echo 'Setting up oh-my-zsh...'
