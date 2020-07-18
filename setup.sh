@@ -4,7 +4,24 @@ GIT_USER_EMAIL="mintobit@gmail.com"
 GIT_USER_NAME="Anton Nizhegorodov"
 
 sudo apt-get update
-sudo apt-get install -qq git vim zsh wget ncdu htop php
+sudo apt-get install -qq git vim zsh wget ncdu htop php adapta-gtk-theme breeze-cursor-theme
+
+if [ ! -d ~/.icons/Flat-Remix-Blue-Dark ]; then
+    git clone https://github.com/daniruiz/flat-remix.git
+    mkdir -p ~/.icons
+    cp -R flat-remix/Flat-Remix-Blue-Dark ~/.icons/Flat-Remix-Blue-Dark
+    gsettings set org.cinnamon.desktop.interface icon-theme 'Flat-Remix-Blue-Dark'
+    rm -rf flat-remix
+fi
+
+# Window borders.
+gsettings set org.cinnamon.desktop.wm.preferences theme 'Adapta-Nokto'
+# Controls.
+gsettings set org.cinnamon.desktop.interface gtk-theme 'Adapta-Nokto'
+# Mouse pointer.
+gsettings set org.cinnamon.desktop.interface cursor-theme 'Breeze_Snow'
+# Desktop.
+gsettings set org.cinnamon.theme name 'Adapta-Nokto'
 
 if [ ! -f ~/.ssh/id_rsa.pub ]; then
     ssh-keygen -f ~/.ssh/id_rsa -N ''
@@ -19,13 +36,13 @@ else
 fi
 
 ACTUAL_GIT_USER_EMAIL="$(git config --global --get user.email)"
-if [ -z $ACTUAL_GIT_USER_EMAIL ]; then
+if [ -z "$ACTUAL_GIT_USER_EMAIL" ]; then
     echo 'Setting up git user.email...'
     git config --global user.email $GIT_USER_EMAIL
 fi
 
 ACTUAL_GIT_USER_NAME="$(git config --global --get user.name)"
-if [ -z $ACTUAL_GIT_USER_NAME ]; then
+if [ -z "$ACTUAL_GIT_USER_NAME" ]; then
     echo 'Setting up git user.name...'
     git config --global user.name $GIT_USER_NAME
 fi
