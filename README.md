@@ -3,9 +3,9 @@ This package installs everything I typically need on a clean system
 
 ## Usage
 
-Run `wget https://github.com/mintobit/env/archive/master.zip && unzip master.zip && cd env-master && ./setup.sh` 
+Run `wget --no-cache https://github.com/mintobit/env/archive/master.zip && unzip master.zip && cd env-master && ./setup.sh && cd .. && rm master.zip && rm -r env-master`
 
-Run dev version `wget https://github.com/mintobit/env/archive/develop.zip && unzip develop.zip && cd env-develop && ./setup.sh`
+Run dev version `wget --no-cache https://github.com/mintobit/env/archive/develop.zip && unzip develop.zip && cd env-develop && ./setup.sh && cd .. && rm develop.zip && rm -r env-develop`
 
 ## Environment scripts/configs
 
@@ -16,8 +16,4 @@ Run dev version `wget https://github.com/mintobit/env/archive/develop.zip && unz
 
 ## TODO
 
-* Make it fully idempotent (do not override configs?)
-* Install nginx and configure
-* Install apache and configure
-* Ask for input? (e.g. git email)
-* Colors
+* Install docker
