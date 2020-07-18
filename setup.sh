@@ -1,5 +1,8 @@
 #!/bin/sh
 
+GIT_USER_EMAIL="mintobit@gmail.com"
+GIT_USER_NAME="Anton Nizhegorodov"
+
 sudo apt-get update
 sudo apt-get install -qq git vim zsh wget ncdu htop php
 
@@ -13,6 +16,18 @@ if [ ! -d ~/.oh-my-zsh ]; then
     git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 else
     echo 'oh-my-zsh is already installed'
+fi
+
+ACTUAL_GIT_USER_EMAIL="$(git config --global --get user.email)"
+if [ -z $ACTUAL_GIT_USER_EMAIL ]; then
+    echo 'Setting up git user.email...'
+    git config --global user.email $GIT_USER_EMAIL
+fi
+
+ACTUAL_GIT_USER_NAME="$(git config --global --get user.name)"
+if [ -z $ACTUAL_GIT_USER_NAME ]; then
+    echo 'Setting up git user.name...'
+    git config --global user.name $GIT_USER_NAME
 fi
 
 if [ ! -f /usr/local/bin/composer ]; then
